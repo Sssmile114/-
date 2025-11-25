@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>冰箱炼金术士</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // 环境垫片：防止在非 Node 环境下（如本地直接打开）因访问 process.env 报错而白屏
+      window.process = { env: { API_KEY: '' } };
+      
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'warm-yellow': '#FFD700',
+              'cream-white': '#FFFDD0',
+              'caramel': '#8B4513',
+              'soft-brown': '#D2691E',
+            },
+            fontFamily: {
+              sans: ['ui-rounded', 'Hiragino Maru Gothic ProN', 'Quicksand', 'Comfortaa', 'PingFang SC', 'Microsoft YaHei', 'sans-serif'],
+            },
+            animation: {
+              'float': 'float 3s ease-in-out infinite',
+              'pan-shake': 'pan-shake 0.5s ease-in-out infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              'pan-shake': {
+                '0%, 100%': { transform: 'rotate(0deg)' },
+                '25%': { transform: 'rotate(-5deg)' },
+                '75%': { transform: 'rotate(5deg)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
+      body {
+        font-family: 'Quicksand', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        background-color: #FFFDD0;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
